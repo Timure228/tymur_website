@@ -1,0 +1,27 @@
+.diagonal-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  clip-path: polygon(
+          0 0, 50% 0,
+          45% 15%, 42% 30%, 38% 45%, 33% 60%, 30% 75%, 28% 90%, 30% 100%,
+          0 100%
+  );
+  z-index: -10;
+}
+
+@font-face {
+  font-family: MonsterratBold; /* set name */
+  src: url(src/fonts/MontserratBold-DOWZd.ttf); /* url of the font */
+}
+
+.main-title {
+  font-family: MonsterratBold;
+  position: absolute;
+  right: 15px;
+  font-size: 3.2em;
+}
+
