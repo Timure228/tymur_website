@@ -3,7 +3,8 @@ import {useRef, useState} from "react";
 export default function HomePage() {
     const ref = useRef(null)
     const [style, setStyle] = useState({})
-
+    const [section, setSection] = useState(0);
+    const totalSections = 2;
 
     const handleMouseMove = (e) => {
         const el = ref.current
@@ -28,8 +29,11 @@ export default function HomePage() {
         });
     };
 
+    const goToSection = (index) => setSection(index);
+
     return (
         <>
+            <span className="main-title">Hello Portfolio!</span>
             <div className="diagonal-black"></div>
             <div
                 ref={ref}
@@ -47,30 +51,39 @@ export default function HomePage() {
                     style={{
                         display: "block",
                         borderRadius: "12px",
-                        display: "flex",
                         marginLeft: "500px"
                     }}
+                    draggable={false}
                     width={700}
                 />
             </div>
-            <button className="animated-button">
-                <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                    ></path>
-                </svg>
-                <span className="text">More About Me</span>
-                <span className="circle"></span>
-                <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                    ></path>
-                </svg>
+            <button className="animated-button" onClick={() => goToSection(1)}>
+                <span className="btn-text-one">Hover me</span>
+                <span className="btn-text-two">More</span>
             </button>
 
+            {/* Sections */}
+            <div style={{
+                height: `${totalSections * 120}vh`,
+                transform: `translateY(-${section * 120}vh)`,
+                transition: "transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)",
+            }}
+            >
+                <section
+                    style={{
+                        height: "120vh",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#1e1e2f",
+                        color: "white",
+                    }}
+                >
+                    <h1>About me</h1>
+                </section>
+            </div>
 
-
-            <span className="main-title">Hello Portfolio!</span>
         </>
     )
 }
