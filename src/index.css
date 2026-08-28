@@ -1,3 +1,7 @@
+body {
+  overflow-y: hidden;
+}
+
 .diagonal-black {
   position: absolute;
   top: 0;
@@ -114,10 +118,4 @@
   width: 220px;
   height: 220px;
   opacity: 1;
-}
-
-.my-img {
-  position: absolute;
-  top: 18.4%;
-  left: 50%;
 }
