@@ -84,9 +84,3 @@ html, body {
 #p_aboutme {
   font-size: 2em;
 }
-
-#foot_img {
-  position: absolute;
-  right: 100px;
-  rotate: 215deg;
-}

@@ -1,9 +1,9 @@
 import {useRef, useState} from "react";
+import AboutMePage from "./AboutMePage.jsx";
 
 export default function HomePage() {
     const ref = useRef(null)
     const [style, setStyle] = useState({})
-    const totalSections = 2;
 
     const handleMouseMove = (e) => {
         const el = ref.current
@@ -60,14 +60,7 @@ export default function HomePage() {
             </button>
             <section>
                 <article>
-                    <h1>About me</h1>
-                    <p id="p_aboutme"></p>
-                    <img id="foot_img" src="src/assets/meine_fuesse.png" width={250}/>
-                    <p style={{position: "absolute", right: "200px", top: "1050px", rotate: "15deg"}}>
-                        It's ok my feet are here ;)</p>
-                    <p>
-                        Its a really good definition of me
-                    </p>
+                    <AboutMePage/>
                 </article>
             </section>
         </>
