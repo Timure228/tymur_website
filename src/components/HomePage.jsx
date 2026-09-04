@@ -3,7 +3,6 @@ import {useRef, useState} from "react";
 export default function HomePage() {
     const ref = useRef(null)
     const [style, setStyle] = useState({})
-    const [section, setSection] = useState(0);
     const totalSections = 2;
 
     const handleMouseMove = (e) => {
@@ -28,8 +27,6 @@ export default function HomePage() {
             transform: `perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`,
         });
     };
-
-    const goToSection = (index) => setSection(index);
 
     return (
         <>
@@ -57,33 +54,22 @@ export default function HomePage() {
                     width={700}
                 />
             </div>
-            <button className="animated-button" onClick={() => goToSection(1)}>
+            <button className="animated-button">
                 <span className="btn-text-one">Hover me</span>
-                <span className="btn-text-two">More</span>
+                <span className="btn-text-two">Пошел Нахуй</span>
             </button>
-
-            {/* Sections */}
-            <div style={{
-                height: `${totalSections * 120}vh`,
-                transform: `translateY(-${section * 120}vh)`,
-                transition: "transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)",
-            }}
-            >
-                <section
-                    style={{
-                        height: "120vh",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: "#1e1e2f",
-                        color: "white",
-                    }}
-                >
+            <section>
+                <article>
                     <h1>About me</h1>
-                </section>
-            </div>
-
+                    <p id="p_aboutme"></p>
+                    <img id="foot_img" src="src/assets/meine_fuesse.png" width={250}/>
+                    <p style={{position: "absolute", right: "200px", top: "1050px", rotate: "15deg"}}>
+                        It's ok my feet are here ;)</p>
+                    <p>
+                        Its a really good definition of me
+                    </p>
+                </article>
+            </section>
         </>
     )
 }
