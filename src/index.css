@@ -5,6 +5,10 @@ html, body {
   height: 100%;
 }
 
+h1 {
+  font-family: MonsterratBold;
+}
+
 .diagonal-black {
   position: absolute;
   top: 0;
