@@ -88,3 +88,29 @@ h1 {
 #p_aboutme {
   font-size: 2em;
 }
+
+.tech-stack {
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 800px;
+}
+.tech-stack h2 {
+  margin-bottom: 1rem;
+}
+.stack-group {
+  margin-bottom: 1.5rem;
+}
+.stack-group h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.badge-group img {
+  height: 28px;
+}
