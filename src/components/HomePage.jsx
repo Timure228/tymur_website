@@ -54,11 +54,13 @@ export default function HomePage() {
                     width={700}
                 />
             </div>
-            <button className="animated-button">
-                <span className="btn-text-one">Hover me</span>
-                <span className="btn-text-two">Пошел Нахуй</span>
-            </button>
-            <section>
+            <a href="#about-me-page">
+                <button className="animated-button">
+                    <span className="btn-text-one">Hover me</span>
+                    <span className="btn-text-two">Yeah</span>
+                </button>
+            </a>
+            <section id="about-me-page">
                 <article>
                     <AboutMePage/>
                 </article>
