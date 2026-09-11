@@ -45,7 +45,7 @@ export default function HomePage() {
                     ...style,
                 }}
             >
-                <img
+                <img alt="My Image"
                     src="src/assets/me.png"
                     style={{
                         display: "block",
@@ -57,7 +57,7 @@ export default function HomePage() {
                 />
             </div>
             <a style={{position: "absolute", left: "10%", top: "45%"}} href="#about-me-page">
-                <button class="button-78" role="button">About Me</button>
+                <button className="button-78" role="button">About Me</button>
             </a>
             <section id="about-me-page">
                 <article>

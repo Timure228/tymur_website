@@ -4,7 +4,7 @@ export default function MyProjects() {
             <h1>My Projects</h1>
             <div className="project_card">
                 <h2 className="project_title">Face Describer</h2>
-                <img className="project_image" src="src/assets/face_describer.png" width={320} height={210}/>
+                <img alt="Project Image" className="project_image" src="src/assets/face_describer.png" width={320} height={210}/>
                 <p className="project_description">
                     Problemstellung
                     Heutzutage sind die Menschen nicht bereit ihre

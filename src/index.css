@@ -7,7 +7,7 @@ html, body {
 }
 
 h1 {
-    font-family: MonsterratBold;
+    font-family: MonsterratBold, serif;
 }
 
 .diagonal-black {
@@ -31,7 +31,7 @@ h1 {
 }
 
 .main-title {
-    font-family: MonsterratBold;
+    font-family: MonsterratBold, serif;
     position: absolute;
     right: 15px;
     font-size: 3.5em;
