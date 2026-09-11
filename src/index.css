@@ -182,3 +182,52 @@ h1 {
     cursor: default;
     opacity: .24;
 }
+
+.project_card {
+    max-width: 400px;
+    padding: 1.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.project_image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project_title {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+    color: #1a1a1a;
+}
+
+.project_description {
+    margin: 0 0 1.25rem;
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: #24292e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.github-btn:hover {
+    background: #444d56;
+}

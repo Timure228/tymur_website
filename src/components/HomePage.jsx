@@ -1,5 +1,6 @@
 import {useRef, useState} from "react";
 import AboutMePage from "./AboutMePage.jsx";
+import MyProjects from "./MyProjects.jsx";
 
 export default function HomePage() {
     const ref = useRef(null)
@@ -61,6 +62,11 @@ export default function HomePage() {
             <section id="about-me-page">
                 <article>
                     <AboutMePage/>
+                </article>
+            </section>
+            <section id="my-projects-page">
+                <article>
+                    <MyProjects/>
                 </article>
             </section>
         </>
