@@ -12,7 +12,7 @@ export default function AboutMePage() {
                 <p style={{width: "900px", fontFamily: "MonsterratBold", fontSize: "1.2em"}}>
                     My Name is Tymur and Im currently studying Informatics at IMS Kantonschule Büelrain.
                     I've already over 20 Projects built on GitHub, which you can visit under
-                    <a href="https://github.com/Timure228"> this link</a>.
+                    <a href="https://github.com/Timure228" target="_blank"> this link</a>.
                 </p>
                 <h1>My Background</h1>
                 <p style={{width: "900px", fontFamily: "MonsterratBold", fontSize: "1.2em"}}>

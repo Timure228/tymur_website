@@ -33,6 +33,7 @@ export default function HomePage() {
             <span className="main-title">Hello Portfolio!</span>
             <div className="diagonal-black"></div>
             <div
+                className="img-container"
                 ref={ref}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -54,11 +55,8 @@ export default function HomePage() {
                     width={700}
                 />
             </div>
-            <a href="#about-me-page">
-                <button className="animated-button">
-                    <span className="btn-text-one">Hover me</span>
-                    <span className="btn-text-two">Yeah</span>
-                </button>
+            <a style={{position: "absolute", left: "10%", top: "45%"}} href="#about-me-page">
+                <button class="button-78" role="button">Button 78</button>
             </a>
             <section id="about-me-page">
                 <article>
