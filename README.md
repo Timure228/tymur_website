@@ -1,2 +1,2 @@
 # tymur_website
-My portfolie website
+My portfolio website
