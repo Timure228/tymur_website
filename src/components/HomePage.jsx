@@ -56,7 +56,7 @@ export default function HomePage() {
                 />
             </div>
             <a style={{position: "absolute", left: "10%", top: "45%"}} href="#about-me-page">
-                <button class="button-78" role="button">Button 78</button>
+                <button class="button-78" role="button">About Me</button>
             </a>
             <section id="about-me-page">
                 <article>
