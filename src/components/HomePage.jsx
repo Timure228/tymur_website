@@ -1,6 +1,8 @@
+import React from 'react';
 import {useRef, useState} from "react";
 import AboutMePage from "./AboutMePage.jsx";
 import MyProjects from "./MyProjects.jsx";
+import { useTranslation } from "react-i18next";
 
 export default function HomePage() {
     const ref = useRef(null)
@@ -29,8 +31,43 @@ export default function HomePage() {
         });
     };
 
+    // Language Switch
+    const languages = [
+        { value: "", text: "Options" },
+        { value: "en", text: "English" },
+        { value: "de", text: "German" }
+    ];
+
+    const { t } = useTranslation();
+
+    const [lang, setLang] = useState("en");
+
+    // This function put query that helps to
+    // change the language
+    const handleChange = (e) => {
+        setLang(e.target.value);
+        let loc = "http://localhost:5173/#about-me-page";
+        window.location.replace(
+            loc + "?lng=" + e.target.value
+        );
+    };
+
     return (
         <>
+            <label>{t("choose")}</label>
+            <select value={lang} onChange={handleChange}>
+                {languages.map((item) => {
+                    return (
+                        <option
+                            key={item.value}
+                            value={item.value}
+                        >
+                            {item.text}
+                        </option>
+                    );
+                })}
+            </select>
+
             <span className="main-title">Hello Portfolio!</span>
             <div className="diagonal-black"></div>
             <div
@@ -46,14 +83,14 @@ export default function HomePage() {
                 }}
             >
                 <img alt="My Image"
-                    src="src/assets/me.png"
-                    style={{
-                        display: "block",
-                        borderRadius: "12px",
-                        marginLeft: "500px"
-                    }}
-                    draggable={false}
-                    width={700}
+                     src="src/assets/me.png"
+                     style={{
+                         display: "block",
+                         borderRadius: "12px",
+                         marginLeft: "500px"
+                     }}
+                     draggable={false}
+                     width={700}
                 />
             </div>
             <a style={{position: "absolute", left: "10%", top: "45%"}} href="#about-me-page">

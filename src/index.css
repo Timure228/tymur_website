@@ -185,8 +185,11 @@ h1 {
 
 .project_cards {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
     flex-direction: row;
+    padding: 30px;
+    margin: 10px;
+    gap: 50px;
 }
 
 .project_card {
@@ -225,6 +228,7 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1.2rem;
+    margin-top: 5px;
     background: #24292e;
     color: #fff;
     text-decoration: none;

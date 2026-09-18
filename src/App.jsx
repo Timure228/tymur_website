@@ -2,11 +2,11 @@ import './App.css'
 import HomePage from "./components/HomePage.jsx";
 
 function App() {
-  return (
-    <>
-      <HomePage/>
-    </>
-  )
+    return (
+        <>
+            <HomePage/>
+        </>
+    )
 }
 
 export default App
