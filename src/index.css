@@ -183,6 +183,12 @@ h1 {
     opacity: .24;
 }
 
+.project_cards {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
 .project_card {
     max-width: 400px;
     padding: 1.5rem;
