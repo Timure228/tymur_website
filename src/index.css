@@ -241,3 +241,38 @@ h1 {
 .github-btn:hover {
     background: #444d56;
 }
+
+.lang-switch {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.lang-switch button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-weight: 400;
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.lang-switch button.active {
+    color: #fff;
+    font-weight: 700;
+}
+
+.lang-switch span {
+    color: #555;
+    font-size: 1.5em;
+}

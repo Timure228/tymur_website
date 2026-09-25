@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 export default function HomePage() {
     const ref = useRef(null)
     const [style, setStyle] = useState({})
+    const { t, i18n } = useTranslation();
 
     const handleMouseMove = (e) => {
         const el = ref.current
@@ -31,44 +32,37 @@ export default function HomePage() {
         });
     };
 
-    // Language Switch
+
     const languages = [
-        { value: "", text: "Options" },
-        { value: "en", text: "English" },
-        { value: "de", text: "German" }
+        { value: 'en', text: 'English' },
+        { value: 'de', text: 'Deutsch' },
     ];
 
-    const { t } = useTranslation();
-
-    const [lang, setLang] = useState("en");
-
-    // This function put query that helps to
-    // change the language
     const handleChange = (e) => {
-        setLang(e.target.value);
-        let loc = "http://localhost:5173/#about-me-page";
-        window.location.replace(
-            loc + "?lng=" + e.target.value
-        );
+        i18n.changeLanguage(e.target.value);
     };
 
     return (
         <>
-            <label>{t("choose")}</label>
-            <select value={lang} onChange={handleChange}>
-                {languages.map((item) => {
-                    return (
-                        <option
-                            key={item.value}
-                            value={item.value}
-                        >
-                            {item.text}
-                        </option>
-                    );
-                })}
-            </select>
+            <div className="lang-switch">
+                <button
+                    type="button"
+                    className={i18n.language === 'en' ? 'active' : ''}
+                    onClick={() => i18n.changeLanguage('en')}
+                >
+                    EN
+                </button>
+                <span>|</span>
+                <button
+                    type="button"
+                    className={i18n.language === 'de' ? 'active' : ''}
+                    onClick={() => i18n.changeLanguage('de')}
+                >
+                    DE
+                </button>
+            </div>
 
-            <span className="main-title">Hello Portfolio!</span>
+            <span className="main-title">{t("title")}</span>
             <div className="diagonal-black"></div>
             <div
                 className="img-container"
@@ -94,7 +88,7 @@ export default function HomePage() {
                 />
             </div>
             <a style={{position: "absolute", left: "10%", top: "45%"}} href="#about-me-page">
-                <button className="button-78" role="button">About Me</button>
+                <button className="button-78" role="button">{t("about_me_button")}</button>
             </a>
             <section id="about-me-page">
                 <article>

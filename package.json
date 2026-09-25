@@ -4,11 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -p none \"vite\" \"i18nexus listen --path 'src/locales'\"",
+    "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview",
-    "prebuild": "i18nexus pull --path 'src/locales'"
+    "preview": "vite preview"
   },
   "dependencies": {
     "i18next": "^26.4.2",
@@ -16,12 +15,11 @@
     "i18next-http-backend": "^4.0.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-i18next": "^17.0.14",
+    "react-i18next": "^17.0.15",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@i18nexus/cli": "^5.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
