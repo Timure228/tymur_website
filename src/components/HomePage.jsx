@@ -32,16 +32,6 @@ export default function HomePage() {
         });
     };
 
-
-    const languages = [
-        {value: 'en', text: 'English'},
-        {value: 'de', text: 'Deutsch'},
-    ];
-
-    const handleChange = (e) => {
-        i18n.changeLanguage(e.target.value);
-    };
-
     return (
         <>
             <div className="lang-switch">

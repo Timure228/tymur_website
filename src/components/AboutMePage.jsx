@@ -7,7 +7,7 @@ export default function AboutMePage() {
         <>
             <h1>{t("about_me_button")}</h1>
             <p id="p_aboutme"></p>
-            <img className="foot-img"
+            <img alt="foot_joke_image" className="foot-img"
                  id="foot_img" src="src/assets/meine_fuesse.png" width={250}/>
             <p className="feet-joke">
                 {t("feet_joke_text")}</p>
@@ -21,7 +21,7 @@ export default function AboutMePage() {
                 <p className="about-text">
                     {t("my_background_text")}
                 </p>
-                <img className="flag-img" src="src/assets/ukraine.png" width={128}/>
+                <img alt="Ukrainian Flag" className="flag-img" src="src/assets/ukraine.png" width={128}/>
                 <h1>Tech Stack</h1>
 
                 <div className="stack-group">
