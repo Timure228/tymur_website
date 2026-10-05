@@ -1,21 +1,19 @@
+import { useTranslation } from "react-i18next";
+
+
 export default function MyProjects() {
+    const { t } = useTranslation();
+
     return (
         <>
-            <h1>My Projects</h1>
+            <h1>{t("my_projects")}</h1>
             <div className="project_cards">
                 <div className="project_card">
                     <h2 className="project_title">Face Describer</h2>
                     <img alt="Project Image" className="project_image" src="src/assets/face_describer.png" width={320}
                          height={210}/>
                     <p className="project_description">
-                        Nowadays, people are unwilling to have others evaluate their faces.
-                        The reasons are shyness, fear of judgment, and anxiety.
-                        The situation changes when a machine does it.
-                        It does not ask why the user undervalues or overvalues their face,
-                        nor does it laugh at the user.
-                        The machine is interested only in the pixels
-                        in the correct order and evaluates them
-                        numerically.
+                        {t("face_describer_description")}
                     </p>
                     <a href="https://github.com/Timure228/portfolio_face_describer/tree/master" className="github-btn"
                        target="_blank"
@@ -36,13 +34,11 @@ export default function MyProjects() {
                 </div>
 
                 <div className="project_card">
-                    <h2 className="project_title">2D Spiel</h2>
+                    <h2 className="project_title">{t("2d_game")}</h2>
                     <img alt="Project Image" className="project_image" src="src/assets/2d_spiel.png" width={320}
                          height={210}/>
                     <p className="project_description">
-                        This is a 2D game that I programmed using only JS, CSS, and HTML.
-                        I built the movement system, mini-games, dialog windows, and much more from scratch
-                        using only JS, HTML, and CSS. 90% of the images were generated using AI.
+                        {t("2d_game_description")}
                     </p>
                     <a href="https://github.com/Timure228/gta1942JS" className="github-btn"
                        target="_blank"
@@ -67,9 +63,7 @@ export default function MyProjects() {
                     <img alt="Project Image" className="project_image" src="src/assets/dating_app.png" width={320}
                          height={210}/>
                     <p className="project_description">
-                        Planetary Dating App. It is a React-based dating app. Essentially, it is a 3-tier application
-                        consisting of a frontend, a backend, and a database. Within the app, users can like profiles,
-                        chat, create an account, and view their own likes.
+                        {t("dating_app_description")}
                     </p>
                     <a href="https://github.com/Timure228/planetary_dating_app-frontend-" className="github-btn"
                        target="_blank"
