@@ -77,17 +77,13 @@ export default function HomePage() {
                 }}
             >
                 <img alt="My Image"
+                     className="hero-image"
                      src="src/assets/me.png"
-                     style={{
-                         display: "block",
-                         borderRadius: "12px",
-                         marginLeft: "500px"
-                     }}
                      draggable={false}
                      width={700}
                 />
             </div>
-            <a style={{position: "absolute", left: "10%", top: "45%"}} href="#about-me-page">
+            <a className="about-btn-link" href="#about-me-page">
                 <button className="button-78" role="button">{t("about_me_button")}</button>
             </a>
             <section id="about-me-page">

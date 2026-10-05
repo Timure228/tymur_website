@@ -6,9 +6,26 @@ html, body {
     scroll-behavior: smooth;
 }
 
+html {
+    background: #f6f5f2;
+}
+
+body {
+    color: #1a1a1a;
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
 h1 {
     font-family: MonsterratBold, serif;
 }
+
+@font-face {
+    font-family: MonsterratBold; /* set name */
+    src: url(src/fonts/MontserratBold-DOWZd.ttf); /* url of the font */
+}
+
+/* ---------- Hero ---------- */
 
 .diagonal-black {
     position: absolute;
@@ -16,7 +33,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background: linear-gradient(160deg, #1c1c1c 0%, #000 60%);
     clip-path: polygon(
             0 0, 50% 0,
             45% 15%, 42% 30%, 38% 45%, 33% 60%, 30% 75%, 28% 90%, 30% 100%,
@@ -25,21 +42,98 @@ h1 {
     z-index: -10;
 }
 
-@font-face {
-    font-family: MonsterratBold; /* set name */
-    src: url(src/fonts/MontserratBold-DOWZd.ttf); /* url of the font */
-}
-
 .main-title {
     font-family: MonsterratBold, serif;
     position: absolute;
-    right: 15px;
+    top: 24px;
+    right: 24px;
     font-size: 3.5em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #111;
+}
+
+.hero-image {
+    display: block;
+    margin-left: 500px;
+    margin-top: 70px;
+    border-radius: 20px;
+}
+
+.about-btn-link {
+    position: absolute;
+    left: 10%;
+    top: 45%;
+    text-decoration: none;
+}
+
+/* ---------- Language switch ---------- */
+
+.lang-switch {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.lang-switch button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-weight: 400;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.lang-switch button:hover {
+    color: #ddd;
+}
+
+.lang-switch button.active {
+    color: #fff;
+    font-weight: 700;
+}
+
+.lang-switch span {
+    color: #555;
+    font-size: 1.2em;
+}
+
+/* ---------- Sections ---------- */
+
+#about-me-page,
+#my-projects-page {
+    padding: 80px 8%;
+}
+
+#my-projects-page {
+    border-top: 1px solid #e4e2dc;
 }
 
 #p_aboutme {
     font-size: 2em;
+    line-height: 1.45;
+    max-width: 900px;
 }
+
+/* ---------- Tech stack ---------- */
 
 .tech-stack {
     font-family: system-ui, -apple-system, sans-serif;
@@ -47,7 +141,9 @@ h1 {
 }
 
 .tech-stack h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
 }
 
 .stack-group {
@@ -55,23 +151,31 @@ h1 {
 }
 
 .stack-group h3 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: #555;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.08em;
+    color: #666;
+    margin-bottom: 0.6rem;
 }
 
 .badge-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
 }
 
 .badge-group img {
     height: 28px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
 }
 
+.badge-group img:hover {
+    transform: translateY(-2px);
+}
+
+/* ---------- Button ---------- */
 
 .button-78 {
     align-items: center;
@@ -108,12 +212,18 @@ h1 {
     width: auto;
     word-break: keep-all;
     z-index: 0;
+    transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 @media (min-width: 768px) {
     .button-78 {
         padding: 19px 32px;
     }
+}
+
+.button-78:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 10px 18px rgba(249, 58, 19, 0.4));
 }
 
 .button-78:before,
@@ -164,6 +274,7 @@ h1 {
 
 .button-78:active:not(:disabled) {
     color: #ccc;
+    transform: translateY(0);
 }
 
 .button-78:active:not(:disabled):before {
@@ -183,43 +294,52 @@ h1 {
     opacity: .24;
 }
 
+/* ---------- Projects ---------- */
+
 .project_cards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     padding: 30px;
     margin: 10px;
-    gap: 50px;
+    gap: 25px;
 }
 
 .project_card {
-    max-width: 400px;
+    max-width: 335px;
     padding: 1.5rem;
-    border: 1px solid #e1e4e8;
-    border-radius: 12px;
+    border: 1px solid #e8e6e1;
+    border-radius: 16px;
     background: #ffffff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     font-family: system-ui, -apple-system, sans-serif;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .project_image {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 1rem;
 }
 
 .project_title {
     margin: 0 0 0.5rem;
     font-size: 1.4rem;
+    letter-spacing: -0.01em;
     color: #1a1a1a;
 }
 
 .project_description {
     margin: 0 0 1.25rem;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.6;
     font-size: 0.95rem;
 }
 
@@ -232,47 +352,157 @@ h1 {
     background: #24292e;
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .github-btn:hover {
     background: #444d56;
+    transform: translateY(-1px);
 }
 
-.lang-switch {
+/* ---------- Small screens ---------- */
+
+@media (max-width: 900px) {
+    .hero-image {
+        margin-left: 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .main-title {
+        font-size: 2.2em;
+    }
+
+    #about-me-page,
+    #my-projects-page {
+        padding: 48px 5%;
+    }
+
+    #p_aboutme {
+        font-size: 1.4em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+/* ================= About Me page ================= */
+
+#about-me-page {
+    position: relative;
+}
+
+#about-me-page h1 {
+    font-family: MonsterratBold, serif;
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 1rem;
+    color: #111;
+}
+
+#about-me-page h1::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.about-content {
+    max-width: 900px;
+}
+
+.about-text {
+    max-width: 900px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.15em;
+    line-height: 1.75;
+    color: #333;
+}
+
+.about-text a {
+    color: #f93a13;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(249, 58, 19, 0.3);
+    transition: border-color 0.2s ease;
+}
+
+.about-text a:hover {
+    border-color: #f93a13;
+}
+
+.flag-img {
+    display: block;
+    margin-top: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.foot-img {
     position: absolute;
-    top: 16px;
-    left: 16px;
-    z-index: 1000;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    line-height: 1;
+    right: 100px;
+    rotate: 205deg;
+    border-radius: 16px;
+    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.25));
 }
 
-.lang-switch button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #888;
-    font-weight: 400;
-    font-size: 1.5em;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-}
-
-.lang-switch button.active {
-    color: #fff;
-    font-weight: 700;
-}
-
-.lang-switch span {
+.feet-joke {
+    position: absolute;
+    right: 160px;
+    top: 350px;
+    rotate: 10deg;
+    font-size: 1.1em;
+    font-style: italic;
     color: #555;
-    font-size: 1.5em;
+}
+
+.stack-group {
+    max-width: 800px;
+    padding: 1.1rem 1.4rem 1.3rem;
+    background: #fff;
+    border: 1px solid #e8e6e1;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.stack-group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.stack-group h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 1200px) {
+    .foot-img,
+    .feet-joke {
+        position: static;
+        display: block;
+        margin: 1.5rem 0;
+    }
+
+    .foot-img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-text {
+        font-size: 1.05em;
+    }
+
+    #about-me-page h1 {
+        font-size: 1.9rem;
+    }
 }

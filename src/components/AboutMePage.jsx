@@ -1,27 +1,27 @@
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 export default function AboutMePage() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <>
             <h1>{t("about_me_button")}</h1>
             <p id="p_aboutme"></p>
-            <img style={{position: "absolute", right: "100px", rotate: "205deg"}}
+            <img className="foot-img"
                  id="foot_img" src="src/assets/meine_fuesse.png" width={250}/>
-            <p style={{position: "absolute", right: "180px", top: "1040px", rotate: "10deg", fontSize: "1.1em"}}>
+            <p className="feet-joke">
                 {t("feet_joke_text")}</p>
 
-            <div>
-                <p style={{width: "900px", fontFamily: "MonsterratBold", fontSize: "1.2em"}}>
+            <div className="about-content">
+                <p className="about-text">
                     {t('about_me_description')}
                     <a href="https://github.com/Timure228" target="_blank"> this link</a>.
                 </p>
                 <h1>{t("my_background_title")}</h1>
-                <p style={{width: "900px", fontFamily: "MonsterratBold", fontSize: "1.2em"}}>
+                <p className="about-text">
                     {t("my_background_text")}
                 </p>
-                <img src="src/assets/ukraine.png" width={128}/>
+                <img className="flag-img" src="src/assets/ukraine.png" width={128}/>
                 <h1>Tech Stack</h1>
 
                 <div className="stack-group">
