@@ -2,12 +2,12 @@ import React from 'react';
 import {useRef, useState} from "react";
 import AboutMePage from "./AboutMePage.jsx";
 import MyProjects from "./MyProjects.jsx";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 export default function HomePage() {
     const ref = useRef(null)
     const [style, setStyle] = useState({})
-    const { t, i18n } = useTranslation();
+    const {t, i18n} = useTranslation();
 
     const handleMouseMove = (e) => {
         const el = ref.current
@@ -34,8 +34,8 @@ export default function HomePage() {
 
 
     const languages = [
-        { value: 'en', text: 'English' },
-        { value: 'de', text: 'Deutsch' },
+        {value: 'en', text: 'English'},
+        {value: 'de', text: 'Deutsch'},
     ];
 
     const handleChange = (e) => {
@@ -63,7 +63,9 @@ export default function HomePage() {
             </div>
 
             <span className="main-title">{t("title")}</span>
-            <div className="diagonal-black"></div>
+            <div className="diagonal-black-parent">
+                <div className="diagonal-black"></div>
+            </div>
             <div
                 className="img-container"
                 ref={ref}
