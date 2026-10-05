@@ -25,7 +25,7 @@ h1 {
     src: url(src/fonts/MontserratBold-DOWZd.ttf); /* url of the font */
 }
 
-/* ---------- Hero ---------- */
+/* Hero */
 
 .diagonal-black-parent {
     position: absolute;
@@ -69,7 +69,7 @@ h1 {
     text-decoration: none;
 }
 
-/* ---------- Language switch ---------- */
+/* Language switch */
 
 .lang-switch {
     position: absolute;
@@ -118,7 +118,7 @@ h1 {
     font-size: 1.2em;
 }
 
-/* ---------- Sections ---------- */
+/* Sections */
 
 #about-me-page,
 #my-projects-page {
@@ -135,7 +135,7 @@ h1 {
     max-width: 900px;
 }
 
-/* ---------- Tech stack ---------- */
+/* Tech stack */
 
 .tech-stack {
     font-family: system-ui, -apple-system, sans-serif;
@@ -177,7 +177,7 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* ---------- Button ---------- */
+/* Button */
 
 .button-78 {
     align-items: center;
@@ -296,7 +296,7 @@ h1 {
     opacity: .24;
 }
 
-/* ---------- Projects ---------- */
+/* Projects */
 
 .project_cards {
     display: flex;
@@ -365,8 +365,6 @@ h1 {
     transform: translateY(-1px);
 }
 
-/* ---------- Small screens ---------- */
-
 @media (max-width: 900px) {
     .hero-image {
         margin-left: 0;
@@ -394,7 +392,7 @@ h1 {
     }
 }
 
-/* ================= About Me page ================= */
+/* About Me page */
 
 #about-me-page {
     position: relative;
@@ -507,4 +505,9 @@ h1 {
     #about-me-page h1 {
         font-size: 1.9rem;
     }
+}
+
+/* Contact Form */
+.name_input::placeholder {
+    font-style: italic;
 }

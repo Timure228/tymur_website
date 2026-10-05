@@ -3,6 +3,7 @@ import {useRef, useState} from "react";
 import AboutMePage from "./AboutMePage.jsx";
 import MyProjects from "./MyProjects.jsx";
 import {useTranslation} from "react-i18next";
+import ContactForm from "./ContactForm.jsx";
 
 export default function HomePage() {
     const ref = useRef(null)
@@ -86,6 +87,11 @@ export default function HomePage() {
             <section id="my-projects-page">
                 <article>
                     <MyProjects/>
+                </article>
+            </section>
+            <section id="contact-form">
+                <article>
+                    <ContactForm/>
                 </article>
             </section>
         </>
