@@ -8,12 +8,10 @@ export default function ContactForm() {
         e.preventDefault();
         const form = e.currentTarget;
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: new FormData(form),
             });
-            const data = await response.json();
-            if (!data.success) throw new Error(data.message);
 
             setIsSubmitted(true)
             form.reset();
