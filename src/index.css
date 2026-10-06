@@ -508,6 +508,42 @@ h1 {
 }
 
 /* Contact Form */
+
+.contact_inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 5px;
+    gap: 5px;
+}
+
+.name_input {
+    width: 300px;
+    height: 20px;
+    background-color: #373e3b;
+}
+
 .name_input::placeholder {
     font-style: italic;
+}
+
+.email_input {
+    width: 300px;
+    height: 20px;
+}
+.email_input::placeholder {
+    font-style: italic;
+}
+
+.text_input {
+    width: 500px;
+    height: 50px;
+}
+
+.text_input::placeholder {
+    font-style: italic;
+}
+
+.submit_button {
+    background-color: #24d1a3;
 }
