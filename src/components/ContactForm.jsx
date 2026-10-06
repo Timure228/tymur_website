@@ -3,10 +3,7 @@ export default function ContactForm() {
         <>
             <div className="contact-form-div">
                 <h1>Contact me</h1>
-                <form onSubmit={(e) => {
-                    e.preventDefault();
-                    console.log("send");
-                }}>
+                <form action="https://formsubmit.co/arductimur@gmail.com" method="POST">
                     <div className="contact_inputs">
                         <input type="text" name="name" placeholder="Your Name" className="name_input" required/>
                         <input type="email" name="email" placeholder="Your Email" className="email_input" required/>
