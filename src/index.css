@@ -509,41 +509,85 @@ h1 {
 
 /* Contact Form */
 
+.contact-form-div {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 48px 40px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+}
+
+.contact-form-div h1 {
+    margin: 0 0 32px;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: #111;
+}
+
 .contact_inputs {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    margin: 5px;
-    gap: 5px;
+    gap: 22px;
 }
 
-.name_input {
-    width: 300px;
-    height: 20px;
-    background-color: #373e3b;
-}
-
-.name_input::placeholder {
-    font-style: italic;
-}
-
-.email_input {
-    width: 300px;
-    height: 20px;
-}
-.email_input::placeholder {
-    font-style: italic;
+.name_input,
+.email_input,
+.text_input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 4px;
+    font: inherit;
+    color: #111;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .text_input {
-    width: 500px;
-    height: 50px;
+    resize: vertical;
+    min-height: 120px;
 }
 
+.name_input::placeholder,
+.email_input::placeholder,
 .text_input::placeholder {
     font-style: italic;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.name_input:focus,
+.email_input:focus,
+.text_input:focus {
+    border-bottom-color: #8912ec;
+    box-shadow: 0 8px 12px -10px rgba(137, 18, 236, 0.6);
 }
 
 .submit_button {
-    background-color: #24d1a3;
+    align-self: flex-start;
+    margin-top: 8px;
+    padding: 14px 36px;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #f5efe4;
+    background: #111;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -8px rgba(137, 18, 236, 0.55);
+}
+
+.submit_button:active {
+    transform: translateY(0);
 }
