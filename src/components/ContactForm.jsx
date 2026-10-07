@@ -7,17 +7,17 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
-        try {
-            await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: new FormData(form),
-            });
-
-            setIsSubmitted(true)
-            form.reset();
-        } catch (err) {
-            console.error(err);
-        }
+        await fetch("http://localhost:3000/api/feedback", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: form.name.value,
+                email: form.email.value,
+                message: form.message.value,
+            }),
+        });
     };
 
     const {t} = useTranslation();
@@ -27,7 +27,6 @@ export default function ContactForm() {
                 <h1>Contact me</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="contact_inputs">
-                        <input type="hidden" name="access_key" value="605a2b99-9c5a-4283-9d11-5e1dabcdf874"/>
                         <input type="text" name="name" placeholder="Your Name" className="name_input" required/>
                         <input type="email" name="email" placeholder="Your Email" className="email_input" required/>
                         <textarea name="message" placeholder="Your Text" className="text_input" rows={5} required/>
