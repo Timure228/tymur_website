@@ -18,6 +18,8 @@ export default function ContactForm() {
                 message: form.message.value,
             }),
         });
+        setIsSubmitted(true)
+        form.reset()
     };
 
     const {t} = useTranslation();
