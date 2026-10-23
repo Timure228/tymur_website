@@ -51,11 +51,20 @@ export default function HomePage() {
                 >
                     DE
                 </button>
+                <a href="#about-me-page">
+                    <button type="button">| {t("about_me_button")}</button>
+                </a>
+                <a href="#my-projects-page">
+                    <button type="button">| {t("my_projects")}</button>
+                </a>
+                <a href="#contact-form">
+                    <button type="button">| Feedback</button>
+                </a>
             </div>
 
             <span className="main-title">{t("title")}</span>
             <div className="diagonal-black-parent">
-                <div className="diagonal-black"></div>
+            <div className="diagonal-black"></div>
             </div>
             <div
                 className="img-container"
