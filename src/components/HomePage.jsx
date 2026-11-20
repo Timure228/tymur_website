@@ -4,6 +4,7 @@ import AboutMePage from "./AboutMePage.jsx";
 import MyProjects from "./MyProjects.jsx";
 import {useTranslation} from "react-i18next";
 import ContactForm from "./ContactForm.jsx";
+import Ratings from "./Ratings.jsx";
 
 export default function HomePage() {
     const ref = useRef(null)
@@ -64,7 +65,7 @@ export default function HomePage() {
 
             <span className="main-title">{t("title")}</span>
             <div className="diagonal-black-parent">
-            <div className="diagonal-black"></div>
+                <div className="diagonal-black"></div>
             </div>
             <div
                 className="img-container"
@@ -101,6 +102,11 @@ export default function HomePage() {
             <section id="contact-form">
                 <article>
                     <ContactForm/>
+                </article>
+            </section>
+            <section id="ratings">
+                <article>
+                    <Ratings/>
                 </article>
             </section>
         </>
