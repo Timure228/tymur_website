@@ -28,8 +28,9 @@ export default function Ratings() {
 
     return (
         <>
+            <h1 style={{ textAlign: "center" }}>Feedbacks</h1>
             {ratings.map((item) => (
-                <div key={item.id} className="card">
+            <div key={item.id} className="card">
                     <h4>{item.name}</h4>
                     <p>{item.message}</p>
                     <small>{item.created_at}</small>
