@@ -5,20 +5,27 @@ export default function Ratings() {
 
     useEffect(() => {
         console.log("Im running")
+
         async function loadFeedback() {
             console.log("Im running1")
             try {
                 const res = await fetch("http://localhost:3000/api/feedback");
-                if (!res.ok) throw new Error("Request failed");
+                if (!res.ok) {
+                    console.error("Request failed:", res.status);
+                    return;
+                }
                 const data = await res.json();
                 setRatings(data);
             } catch (err) {
                 console.log(err)
             }
-
         }
-        loadFeedback()
+
+        loadFeedback().then(r => {
+            return r
+        })
     }, []);
+
     return (
         <>
             {ratings.map((item) => (
